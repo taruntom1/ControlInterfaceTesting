@@ -16,6 +16,8 @@ add_executable(MotorControllerInterface
     src/main.cpp
     src/ControlInterface.cpp
     src/UARTProtocol.cpp
+    src/ReadJSON.cpp
+    src/print.cpp
 )
 
 # Add the header files (optional, for IDEs)
@@ -24,6 +26,8 @@ set(HEADERS
     include/ControlInterface.hpp
     include/Structs.hpp
     include/UARTProtocol.hpp
+    include/ReadJSON.hpp
+    include/print.hpp
 )
 
 # Add the headers to the project (optional, for IDEs)

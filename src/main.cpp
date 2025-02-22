@@ -2,6 +2,8 @@
 #include <iostream>
 #include <unistd.h> // Required for usleep
 #include "ControlInterface.hpp"
+#include "print.hpp"
+#include "ReadJSON.hpp"
 
 int main()
 {
@@ -10,7 +12,8 @@ int main()
     ControllerData controllerData;
     ControlInterface controlInterface(config, controllerData);
 
-    controllerData.motorData = new MotorData[2];
+    loadControllerDataFromJson("controller_data.json", controllerData);
+    printControllerData(controllerData);
 
     while (true)
     {
