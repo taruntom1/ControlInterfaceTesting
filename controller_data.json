@@ -15,7 +15,7 @@
     "motorData": [
         {
             "motorID": 0,
-            "controlMode": 3,
+            "controlMode": 2,
             "anglePIDConstants": { "p": 0, "i": 0, "d": 0 },
             "speedPIDConstants": { "p": 0, "i": 0, "d": 0 },
             "pwmLimits": { "minPWM": 0, "maxPWM": 0 },
@@ -28,7 +28,7 @@
         },
         {
             "motorID": 1,
-            "controlMode": 3,
+            "controlMode": 2,
             "anglePIDConstants": { "p": 0, "i": 0, "d": 0 },
             "speedPIDConstants": { "p": 0, "i": 0, "d": 0 },
             "pwmLimits": { "minPWM": 0, "maxPWM": 0 },

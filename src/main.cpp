@@ -12,27 +12,15 @@ int main()
     ControllerData controllerData;
     ControlInterface controlInterface(config, controllerData);
 
-    loadControllerDataFromJson("controller_data.json", controllerData);
+    controllerData.motorData = new MotorData[2];
+
+    printControllerData(controllerData);
+
+    loadControllerDataFromJson("../controller_data.json", controllerData);
     printControllerData(controllerData);
 
     while (true)
     {
-        controllerData.motorData[0].motorID = 0;
-        controllerData.motorData[0].motorConnections.dirPin = 38;
-        controllerData.motorData[0].motorConnections.pwmPin = 39;
-        controllerData.motorData[0].motorConnections.encPinA = 9;
-        controllerData.motorData[0].motorConnections.encPinB = 10;
-        controllerData.motorData[0].controlMode = PWM_DIRECT_CONTROL;
-
-        controllerData.motorData[1].motorID = 1;
-        controllerData.motorData[1].motorConnections.dirPin = 36;
-        controllerData.motorData[1].motorConnections.pwmPin = 37;
-        controllerData.motorData[1].motorConnections.encPinA = 21;
-        controllerData.motorData[1].motorConnections.encPinB = 47;
-        controllerData.motorData[1].controlMode = PWM_DIRECT_CONTROL;
-
-        controllerData.motorData[0].pwmValue = 0;
-        controllerData.motorData[1].pwmValue = 0;
 
         int dummy;
         std::cin >> dummy;
@@ -70,8 +58,8 @@ int main()
             std::cout << "Set failed for motor control mode" << std::endl;
 
         std::cin >> dummy;
-        controllerData.motorData[0].pwmValue = 555;
-        controllerData.motorData[1].pwmValue = 556;
+        controllerData.motorData[0].pwmValue = 500;
+        controllerData.motorData[1].pwmValue = 600;
         controlInterface.SetMotorPWMs();
         std::cout << "PWMs set" << std::endl;
 
@@ -122,14 +110,14 @@ int main()
 
         while (true)
         {
-            for (uint16_t i = 0; i < 1000; i += 50)
+            for (int16_t i = 0; i < 1000; i += 50)
             {
                 controllerData.motorData[0].pwmValue = i;
                 controlInterface.SetMotorPWMs();
                 usleep(100000); // usleep takes microseconds
             }
             usleep(1000000);
-            for (uint16_t i = 1000; i > 0; i -= 50)
+            for (int16_t i = 1000; i > -1000; i -= 50)
             {
                 controllerData.motorData[0].pwmValue = i;
                 controlInterface.SetMotorPWMs();
