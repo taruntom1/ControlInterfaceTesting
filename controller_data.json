@@ -7,9 +7,9 @@
             "speedBroadcast": false,
             "pwmBroadcast": false
         },
-        "odoBroadcastFrequency": 0,
+        "odoBroadcastFrequency": 30,
         "updateFrequencies": {
-            "interfaceRun": 0
+            "interfaceRun": 50
         }
     },
     "motorData": [
@@ -23,7 +23,7 @@
             "odometryData": { "angle": 0, "rpm": 0 },
             "setpoint": { "angle": 0, "rpm": 0 },
             "odoBroadcastStatus": { "angleBroadcast": false, "speedBroadcast": false, "pwmBroadcast": false },
-            "updateFrequenciesWheel": { "pwm": 0, "anglePID": 0, "speedPID": 0 },
+            "updateFrequenciesWheel": { "pwm": 50, "anglePID": 30, "speedPID": 30 },
             "pwmValue": 0
         },
         {
@@ -36,7 +36,7 @@
             "odometryData": { "angle": 0, "rpm": 0 },
             "setpoint": { "angle": 0, "rpm": 0 },
             "odoBroadcastStatus": { "angleBroadcast": false, "speedBroadcast": false, "pwmBroadcast": false },
-            "updateFrequenciesWheel": { "pwm": 0, "anglePID": 0, "speedPID": 0 },
+            "updateFrequenciesWheel": { "pwm": 50, "anglePID": 30, "speedPID": 30 },
             "pwmValue": 0
         }
     ]
